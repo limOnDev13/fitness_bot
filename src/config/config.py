@@ -19,5 +19,4 @@ def load_config(path: Optional[str] = None) -> Config:
     """Func loads config data"""
     env = Env()
     env.read_env(path)
-    return Config(bot=TgBot(token=env("BOT_TOKEN"),
-                            admin_id=env("ADMIN_ID")))
+    return Config(bot=TgBot(token=env("BOT_TOKEN"), admin_id=env("ADMIN_ID")))

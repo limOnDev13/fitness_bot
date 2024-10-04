@@ -1,14 +1,13 @@
 import asyncio
 import logging.config
 
-from aiogram import Dispatcher, Bot
+from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.fsm.storage.memory import MemoryStorage
 
-from config.config import load_config, Config
-from config.log_config import dict_config
 import handlers.users_handlers
-
+from config.config import Config, load_config
+from config.log_config import dict_config
 
 logging.config.dictConfig(dict_config)
 logger = logging.getLogger("main")
@@ -22,8 +21,7 @@ async def main():
 
     # init bot
     bot: Bot = Bot(
-        token=config.bot.token,
-        default=DefaultBotProperties(parse_mode="HTML")
+        token=config.bot.token, default=DefaultBotProperties(parse_mode="HTML")
     )
     storage: MemoryStorage = MemoryStorage()
     dp: Dispatcher = Dispatcher(storage=storage)
