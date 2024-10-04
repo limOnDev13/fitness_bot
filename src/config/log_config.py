@@ -6,7 +6,7 @@ dict_config: Dict[str, Any] = {
     "disable_existing_loggers": False,
     "formatters": {
         "base": {
-            "format": "%(asctime)s | %(filename)s | %(levelnamme)s : %(message)s"
+            "format": "%(asctime)s | %(filename)s | %(funcName)s | %(levelname)s : %(message)s"
         }
     },
     "handlers": {
